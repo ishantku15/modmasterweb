@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MODMASTER - Premium APK & Course Platform</title>
+    
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Download premium mod APKs and exclusive courses. MODMASTER offers the latest modified applications and educational content with direct Google Drive links.">
+    <meta name="keywords" content="mod apk, premium apps, courses, android, modded apps, free download, MODMASTER">
+    <meta name="author" content="Ishant Webworks">
+    <meta name="robots" content="index, follow">
+    <meta name="googlebot" content="index, follow">
+    
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="MODMASTER - Premium APK & Course Platform">
+    <meta property="og:description" content="Download premium mod APKs and exclusive courses with direct Google Drive links.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://modmaster.github.io">
+    <meta property="og:site_name" content="MODMASTER">
+    
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="MODMASTER - Premium APK & Course Platform">
+    <meta name="twitter:description" content="Download premium mod APKs and exclusive courses with direct Google Drive links.">
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://modmaster.github.io">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🚀</text></svg>">
+    
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="assets/css/style.css">
+    
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        "name": "MODMASTER",
+        "description": "Premium APK & Course Platform",
+        "url": "https://modmaster.ishant.shop",
+        "potentialAction": {
+            "@type": "SearchAction",
+            "target": "https://modmaster.ishant.shop/search?q={search_term_string}",
+            "query-input": "required name=search_term_string"
+        },
+        "author": {
+            "@type": "Organization",
+            "name": "Ishant Webworks",
+            "url": "https://ishant.shop"
+        }
+    }
+    </script>
+</head>
+<body>
+    <!-- Loading Screen -->
+    <div id="loading-screen">
+        <div class="loading-content">
+            <div class="cyber-logo">MODMASTER</div>
+            <div class="loading-bar">
+                <div class="loading-progress"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <span class="logo-text">MOD</span><span class="logo-accent">MASTER</span>
+            </div>
+            <div class="nav-menu" id="nav-menu">
+                <ul class="nav-list" id="nav-list">
+                    <li><a href="#home" class="nav-link">Home</a></li>
+                    <li><a href="#apks" class="nav-link">APKs</a></li>
+                    <li><a href="#courses" class="nav-link">Courses</a></li>
+                    <li><a href="#request" class="nav-link">Request</a></li>
+                    <li><a href="#about" class="nav-link">About</a></li>
+                </ul>
+            </div>
+            <button class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-container">
+            <div class="hero-content">
+                <h1 class="hero-title">
+                    Welcome to <span class="gradient-text">MODMASTER</span>
+                </h1>
+                <p class="hero-subtitle">
+                    Your ultimate destination for premium mod APKs and exclusive courses. 
+                    Experience the future of mobile applications and learning.
+                </p>
+                <div class="hero-buttons">
+                    <a href="#apks" class="btn btn-primary">Explore APKs</a>
+                    <a href="#courses" class="btn btn-secondary">View Courses</a>
+                </div>
+            </div>
+            <div class="hero-animation">
+                <div class="cyber-grid"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- APKs Section -->
+    <section id="apks" class="section">
+        <div class="container">
+            <h2 class="section-title">Premium <span class="gradient-text">APKs</span></h2>
+            <p class="section-subtitle">Discover the latest modified applications with enhanced features</p>
+            
+            <div class="filter-tabs">
+                <button class="filter-btn active" data-category="all">All</button>
+                <button class="filter-btn" data-category="games">Games</button>
+                <button class="filter-btn" data-category="productivity">Productivity</button>
+                <button class="filter-btn" data-category="social">Social</button>
+                <button class="filter-btn" data-category="media">Media</button>
+            </div>
+
+            <div class="grid" id="apks-grid">
+                <!-- APKs will be loaded dynamically -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Courses Section -->
+    <section id="courses" class="section">
+        <div class="container">
+            <h2 class="section-title">Exclusive <span class="gradient-text">Courses</span></h2>
+            <p class="section-subtitle">Master new skills with our comprehensive learning resources</p>
+            
+            <div class="filter-tabs">
+                <button class="filter-btn active" data-category="all">All</button>
+                <button class="filter-btn" data-category="programming">Programming</button>
+                <button class="filter-btn" data-category="design">Design</button>
+                <button class="filter-btn" data-category="marketing">Marketing</button>
+                <button class="filter-btn" data-category="business">Business</button>
+            </div>
+
+            <div class="grid" id="courses-grid">
+                <!-- Courses will be loaded dynamically -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Request Section -->
+    <section id="request" class="section">
+        <div class="container">
+            <h2 class="section-title">Request <span class="gradient-text">Content</span></h2>
+            <p class="section-subtitle">Can't find what you're looking for? Request it and we'll add it!</p>
+            
+            <div class="request-container">
+                <div class="request-form-wrapper">
+                    <form action="https://formsubmit.co/ishant150407@gmail.com" method="POST" class="request-form"></form>
+                        <input type="hidden" name="_subject" value="New Content Request - MODMASTER">
+                        <input type="hidden" name="_captcha" value="false">
+                        <input type="hidden" name="_next" value="thankyou.html">
+                        
+                        <div class="form-group">
+                            <label for="request-type">Request Type</label>
+                            <select name="type" id="request-type" required>
+                                <option value="">Select type</option>
+                                <option value="apk">APK/App</option>
+                                <option value="course">Course</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="request-name">Name</label>
+                            <input type="text" name="name" id="request-name" placeholder="Your name" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="request-email">Email</label>
+                            <input type="email" name="email" id="request-email" placeholder="your.email@example.com" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="request-title">Title/Name of Content</label>
+                            <input type="text" name="title" id="request-title" placeholder="e.g., Photoshop Premium, Python Course" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="request-description">Description</label>
+                            <textarea name="description" id="request-description" placeholder="Provide details about what you're looking for..." rows="4" required></textarea>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="request-urgency">Priority</label>
+                            <select name="urgency" id="request-urgency">
+                                <option value="low">Low</option>
+                                <option value="medium" selected>Medium</option>
+                                <option value="high">High</option>
+                            </select>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary btn-full">
+                            <span>Submit Request</span>
+                            <div class="btn-overlay"></div>
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="section">
+        <div class="container">
+            <h2 class="section-title">About <span class="gradient-text">MODMASTER</span></h2>
+            
+            <div class="about-grid">
+                <div class="about-content">
+                    <h3>Our Mission</h3>
+                    <p>At MODMASTER, we believe in democratizing access to premium applications and quality education. Our platform provides carefully curated mod APKs and exclusive courses to enhance your digital experience and learning journey.</p>
+                    
+                    <h3>Why Choose Us?</h3>
+                    <ul class="feature-list">
+                        <li>✨ Verified and safe mod APKs</li>
+                        <li>🚀 Direct Google Drive downloads</li>
+                        <li>📚 High-quality course content</li>
+                        <li>🔒 Secure and reliable platform</li>
+                        <li>📱 Mobile-optimized experience</li>
+                        <li>⚡ Fast and efficient service</li>
+                    </ul>
+                </div>
+                
+                <div class="about-stats">
+                    <div class="stat-card">
+                        <div class="stat-number" data-count="10+">0</div>
+                        <div class="stat-label">Premium APKs</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number" data-count="10+">0</div>
+                        <div class="stat-label">Exclusive Courses</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number" data-count="10+">0</div>
+                        <div class="stat-label">Happy Users</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>MODMASTER</h3>
+                    <p>Your ultimate destination for premium mod APKs and exclusive courses.</p>
+                    <div class="social-links">
+                        <a href="https://ishant.shop" class="social-link" target="_blank" rel="noopener">Our Website</a>
+                        <a href="https://blogs.ishant.shop" class="social-link" target="_blank" rel="noopener">Our Blogs</a>
+                    </div>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#apks">APKs</a></li>
+                        <li><a href="#courses">Courses</a></li>
+                        <li><a href="#request">Request</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Contact</h4>
+                    <p>Email: <a href="mailto:ishant150407@gmail.com">ishant150407@gmail.com</a></p>
+                    <p>Website: <a href="https://ishant.shop" target="_blank" rel="noopener">ishant.shop</a></p>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2025 MODMASTER. Created by <a href="https://ishant.shop" target="_blank" rel="noopener">Ishant Webworks</a>. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button id="back-to-top" class="back-to-top" aria-label="Back to top">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="m18 15-6-6-6 6"/>
+        </svg>
+    </button>
+
+    <!-- Scripts -->
+    <script src="assets/js/script.js"></script>
+</body>
+</html>

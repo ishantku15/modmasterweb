@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thank You - MODMASTER</title>
+    
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Thank you for your request! We've received your submission and will get back to you soon.">
+    <meta name="robots" content="noindex, nofollow">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🚀</text></svg>">
+    
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+    <!-- Thank You Page -->
+    <div class="thankyou-page">
+        <div class="thankyou-container">
+            <div class="thankyou-icon">🎉</div>
+            
+            <h1 class="thankyou-title">
+                Thank You for Your <span class="gradient-text">Request</span>!
+            </h1>
+            
+            <p class="thankyou-message">
+                We've successfully received your request and our team will review it shortly. 
+                You can expect to hear back from us within 24-48 hours.
+            </p>
+            
+            <div class="thankyou-details">
+                <h3>What happens next?</h3>
+                <ul>
+                    <li>Our team will review your request</li>
+                    <li>We'll check availability and feasibility</li>
+                    <li>You'll receive an email confirmation</li>
+                    <li>If approved, content will be added within 3-5 days</li>
+                    <li>You'll be notified when it's available</li>
+                </ul>
+            </div>
+            
+            <div class="thankyou-actions">
+                <a href="index.html" class="btn btn-primary">
+                    <span>Back to Home</span>
+                    <div class="btn-overlay"></div>
+                </a>
+                <a href="index.html#apks" class="btn btn-secondary">
+                    Browse APKs
+                </a>
+                <a href="index.html#courses" class="btn btn-secondary">
+                    View Courses
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Back to Top Button -->
+    <button id="back-to-top" class="back-to-top" aria-label="Back to top">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="m18 15-6-6-6 6"/>
+        </svg>
+    </button>
+
+    <!-- Scripts -->
+    <script>
+        // Simple back to top functionality
+        const backToTop = document.getElementById('back-to-top');
+        if (backToTop) {
+            window.addEventListener('scroll', () => {
+                if (window.pageYOffset > 300) {
+                    backToTop.classList.add('visible');
+                } else {
+                    backToTop.classList.remove('visible');
+                }
+            });
+
+            backToTop.addEventListener('click', () => {
+                window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth'
+                });
+            });
+        }
+
+        // Auto redirect after 10 seconds (optional)
+        setTimeout(() => {
+            const redirectMessage = document.createElement('p');
+            redirectMessage.style.cssText = `
+                position: fixed;
+                bottom: 20px;
+                left: 50%;
+                transform: translateX(-50%);
+                background: var(--primary-color);
+                color: white;
+                padding: 10px 20px;
+                border-radius: 25px;
+                font-size: 14px;
+                z-index: 1000;
+                animation: fadeInUp 0.5s ease-out;
+            `;
+            redirectMessage.textContent = 'Redirecting to homepage in 5 seconds...';
+            document.body.appendChild(redirectMessage);
+            
+            setTimeout(() => {
+                window.location.href = 'index.html';
+            }, 5000);
+        }, 10000);
+    </script>
+</body>
+</html>

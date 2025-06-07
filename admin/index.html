@@ -1,0 +1,516 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MODMASTER Admin Panel</title>
+    <link rel="stylesheet" href="admin.css">
+    <link rel="icon" type="image/x-icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚙️</text></svg>">
+</head>
+<body>
+    <!-- Login Screen -->
+    <div id="login-screen" class="login-screen">
+        <div class="login-container">
+            <div class="login-header">
+                <h1>MODMASTER</h1>
+                <p>Admin Panel</p>
+            </div>
+            <form id="login-form" class="login-form">
+                <div class="form-group">
+                    <label for="username">Username</label>
+                    <input type="text" id="username" name="username" required>
+                </div>
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" name="password" required>
+                </div>
+                <button type="submit" class="btn btn-primary">Login</button>
+                <div class="login-info">
+                    <p><strong>Demo Credentials:</strong></p>
+                    <p>Username: admin</p>
+                    <p>Password: modmaster123</p>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Admin Dashboard -->
+    <div id="admin-dashboard" class="admin-dashboard hidden">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <h2>MODMASTER</h2>
+                <p>Admin Panel</p>
+            </div>
+            <nav class="sidebar-nav">
+                <ul>
+                    <li><a href="#dashboard" class="nav-link active" data-section="dashboard">📊 Dashboard</a></li>
+                    <li><a href="#apks" class="nav-link" data-section="apks">📱 APKs</a></li>
+                    <li><a href="#courses" class="nav-link" data-section="courses">📚 Courses</a></li>
+                    <li><a href="#navigation" class="nav-link" data-section="navigation">🧭 Navigation</a></li>
+                    <li><a href="#settings" class="nav-link" data-section="settings">⚙️ Settings</a></li>
+                    <li><a href="#export" class="nav-link" data-section="export">💾 Export/Import</a></li>
+                </ul>
+            </nav>
+            <div class="sidebar-footer">
+                <button id="logout-btn" class="btn btn-secondary">Logout</button>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Header -->
+            <header class="content-header">
+                <h1 id="page-title">Dashboard</h1>
+                <div class="header-actions">
+                    <button id="save-data" class="btn btn-primary">Save Changes</button>
+                    <button id="preview-site" class="btn btn-secondary" onclick="window.open('../index.html', '_blank')">Preview Site</button>
+                </div>
+            </header>
+
+            <!-- Dashboard Section -->
+            <section id="dashboard-section" class="content-section active">
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <h3>Total APKs</h3>
+                        <div class="stat-number" id="total-apks">0</div>
+                    </div>
+                    <div class="stat-card">
+                        <h3>Total Courses</h3>
+                        <div class="stat-number" id="total-courses">0</div>
+                    </div>
+                    <div class="stat-card">
+                        <h3>Total Users</h3>
+                        <div class="stat-number" id="total-users">0</div>
+                    </div>
+                    <div class="stat-card">
+                        <h3>Total Downloads</h3>
+                        <div class="stat-number" id="total-downloads">0</div>
+                    </div>
+                </div>
+
+                <div class="recent-activity">
+                    <h2>Quick Actions</h2>
+                    <div class="action-grid">
+                        <button class="action-card" onclick="switchSection('apks')">
+                            <div class="action-icon">📱</div>
+                            <h3>Add New APK</h3>
+                            <p>Upload a new mod APK</p>
+                        </button>
+                        <button class="action-card" onclick="switchSection('courses')">
+                            <div class="action-icon">📚</div>
+                            <h3>Add New Course</h3>
+                            <p>Create a new course entry</p>
+                        </button>
+                        <button class="action-card" onclick="switchSection('navigation')">
+                            <div class="action-icon">🧭</div>
+                            <h3>Update Navigation</h3>
+                            <p>Modify site navigation</p>
+                        </button>
+                        <button class="action-card" onclick="switchSection('export')">
+                            <div class="action-icon">💾</div>
+                            <h3>Export Data</h3>
+                            <p>Download current data</p>
+                        </button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- APKs Section -->
+            <section id="apks-section" class="content-section">
+                <div class="section-header">
+                    <h2>Manage APKs</h2>
+                    <button id="add-apk" class="btn btn-primary">Add New APK</button>
+                </div>
+                
+                <div class="content-grid">
+                    <div class="form-panel">
+                        <h3 id="apk-form-title">Add New APK</h3>
+                        <form id="apk-form" class="item-form">
+                            <input type="hidden" id="apk-id" name="id">
+                            
+                            <div class="form-group">
+                                <label for="apk-title">Title</label>
+                                <input type="text" id="apk-title" name="title" required>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="apk-description">Description</label>
+                                <textarea id="apk-description" name="description" rows="3" required></textarea>
+                            </div>
+                            
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="apk-category">Category</label>
+                                    <select id="apk-category" name="category" required>
+                                        <option value="games">Games</option>
+                                        <option value="productivity">Productivity</option>
+                                        <option value="social">Social</option>
+                                        <option value="media">Media</option>
+                                    </select>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label for="apk-version">Version</label>
+                                    <input type="text" id="apk-version" name="version" required>
+                                </div>
+                            </div>
+                            
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="apk-size">Size</label>
+                                    <input type="text" id="apk-size" name="size" placeholder="e.g., 125 MB" required>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label for="apk-rating">Rating</label>
+                                    <input type="number" id="apk-rating" name="rating" min="1" max="5" step="0.1" required>
+                                </div>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="apk-image">Image URL (Pexels)</label>
+                                <input type="url" id="apk-image" name="image" placeholder="https://images.pexels.com/..." required>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="apk-download">Google Drive Download URL</label>
+                                <input type="url" id="apk-download" name="downloadUrl" placeholder="https://drive.google.com/file/d/..." required>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="apk-requirements">Requirements</label>
+                                <input type="text" id="apk-requirements" name="requirements" placeholder="e.g., Android 7.0+">
+                            </div>
+                            
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="apk-featured">Featured</label>
+                                    <select id="apk-featured" name="featured">
+                                        <option value="false">No</option>
+                                        <option value="true">Yes</option>
+                                    </select>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label for="apk-downloads">Downloads</label>
+                                    <input type="number" id="apk-downloads" name="downloads" value="0">
+                                </div>
+                            </div>
+                            
+                            <div class="form-actions">
+                                <button type="submit" class="btn btn-primary">Save APK</button>
+                                <button type="button" id="cancel-apk" class="btn btn-secondary">Cancel</button>
+                            </div>
+                        </form>
+                    </div>
+                    
+                    <div class="list-panel">
+                        <h3>Current APKs</h3>
+                        <div id="apks-list" class="items-list"></div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Courses Section -->
+            <section id="courses-section" class="content-section">
+                <div class="section-header">
+                    <h2>Manage Courses</h2>
+                    <button id="add-course" class="btn btn-primary">Add New Course</button>
+                </div>
+                
+                <div class="content-grid">
+                    <div class="form-panel">
+                        <h3 id="course-form-title">Add New Course</h3>
+                        <form id="course-form" class="item-form">
+                            <input type="hidden" id="course-id" name="id">
+                            
+                            <div class="form-group">
+                                <label for="course-title">Title</label>
+                                <input type="text" id="course-title" name="title" required>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="course-description">Description</label>
+                                <textarea id="course-description" name="description" rows="3" required></textarea>
+                            </div>
+                            
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="course-category">Category</label>
+                                    <select id="course-category" name="category" required>
+                                        <option value="programming">Programming</option>
+                                        <option value="design">Design</option>
+                                        <option value="marketing">Marketing</option>
+                                        <option value="business">Business</option>
+                                    </select>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label for="course-duration">Duration</label>
+                                    <input type="text" id="course-duration" name="duration" placeholder="e.g., 40 hours" required>
+                                </div>
+                            </div>
+                            
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="course-level">Level</label>
+                                    <select id="course-level" name="level" required>
+                                        <option value="Beginner">Beginner</option>
+                                        <option value="Intermediate">Intermediate</option>
+                                        <option value="Advanced">Advanced</option>
+                                        <option value="Beginner to Advanced">Beginner to Advanced</option>
+                                    </select>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label for="course-rating">Rating</label>
+                                    <input type="number" id="course-rating" name="rating" min="1" max="5" step="0.1" required>
+                                </div>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="course-image">Image URL (Pexels)</label>
+                                <input type="url" id="course-image" name="image" placeholder="https://images.pexels.com/..." required>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="course-download">Google Drive Download URL</label>
+                                <input type="url" id="course-download" name="downloadUrl" placeholder="https://drive.google.com/file/d/..." required>
+                            </div>
+                            
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="course-instructor">Instructor</label>
+                                    <input type="text" id="course-instructor" name="instructor" required>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label for="course-students">Students</label>
+                                    <input type="number" id="course-students" name="students" value="0">
+                                </div>
+                            </div>
+                            
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="course-modules">Modules</label>
+                                    <input type="number" id="course-modules" name="modules" value="1">
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label for="course-projects">Projects</label>
+                                    <input type="number" id="course-projects" name="projects" value="1">
+                                </div>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="course-featured">Featured</label>
+                                <select id="course-featured" name="featured">
+                                    <option value="false">No</option>
+                                    <option value="true">Yes</option>
+                                </select>
+                            </div>
+                            
+                            <div class="form-actions">
+                                <button type="submit" class="btn btn-primary">Save Course</button>
+                                <button type="button" id="cancel-course" class="btn btn-secondary">Cancel</button>
+                            </div>
+                        </form>
+                    </div>
+                    
+                    <div class="list-panel">
+                        <h3>Current Courses</h3>
+                        <div id="courses-list" class="items-list"></div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Navigation Section -->
+            <section id="navigation-section" class="content-section">
+                <div class="section-header">
+                    <h2>Site Navigation</h2>
+                    <button id="add-nav-item" class="btn btn-primary">Add Menu Item</button>
+                </div>
+                
+                <div class="nav-manager">
+                    <div class="form-panel">
+                        <h3 id="nav-form-title">Add Navigation Item</h3>
+                        <form id="nav-form" class="item-form">
+                            <input type="hidden" id="nav-index" name="index">
+                            
+                            <div class="form-group">
+                                <label for="nav-name">Name</label>
+                                <input type="text" id="nav-name" name="name" required>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="nav-href">Link (href)</label>
+                                <input type="text" id="nav-href" name="href" placeholder="#section-name" required>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="nav-icon">Icon (Emoji)</label>
+                                <input type="text" id="nav-icon" name="icon" placeholder="🏠" maxlength="2">
+                            </div>
+                            
+                            <div class="form-actions">
+                                <button type="submit" class="btn btn-primary">Save Menu Item</button>
+                                <button type="button" id="cancel-nav" class="btn btn-secondary">Cancel</button>
+                            </div>
+                        </form>
+                    </div>
+                    
+                    <div class="list-panel">
+                        <h3>Current Navigation</h3>
+                        <div id="nav-list" class="nav-items-list"></div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Settings Section -->
+            <section id="settings-section" class="content-section">
+                <div class="section-header">
+                    <h2>Site Settings</h2>
+                </div>
+                
+                <form id="settings-form" class="settings-form">
+                    <div class="settings-group">
+                        <h3>General Information</h3>
+                        
+                        <div class="form-group">
+                            <label for="site-name">Site Name</label>
+                            <input type="text" id="site-name" name="name" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="site-description">Description</label>
+                            <textarea id="site-description" name="description" rows="3" required></textarea>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="site-keywords">Keywords (comma separated)</label>
+                            <input type="text" id="site-keywords" name="keywords" placeholder="mod apk, courses, android">
+                        </div>
+                    </div>
+                    
+                    <div class="settings-group">
+                        <h3>Contact Information</h3>
+                        
+                        <div class="form-group">
+                            <label for="site-author">Author</label>
+                            <input type="text" id="site-author" name="author" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="site-email">Email</label>
+                            <input type="email" id="site-email" name="email" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="site-website">Website</label>
+                            <input type="url" id="site-website" name="website">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="site-blog">Blog URL</label>
+                            <input type="url" id="site-blog" name="blog">
+                        </div>
+                    </div>
+                    
+                    <div class="settings-group">
+                        <h3>Statistics</h3>
+                        
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="stats-apks">Total APKs</label>
+                                <input type="number" id="stats-apks" name="apks" value="500">
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="stats-courses">Total Courses</label>
+                                <input type="number" id="stats-courses" name="courses" value="100">
+                            </div>
+                        </div>
+                        
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="stats-users">Total Users</label>
+                                <input type="number" id="stats-users" name="users" value="10000">
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="stats-downloads">Total Downloads</label>
+                                <input type="number" id="stats-downloads" name="downloads" value="150000">
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="form-actions">
+                        <button type="submit" class="btn btn-primary">Save Settings</button>
+                    </div>
+                </form>
+            </section>
+
+            <!-- Export/Import Section -->
+            <section id="export-section" class="content-section">
+                <div class="section-header">
+                    <h2>Data Management</h2>
+                </div>
+                
+                <div class="export-import-grid">
+                    <div class="export-panel">
+                        <h3>Export Data</h3>
+                        <p>Download the current data.json file for backup or transfer.</p>
+                        <button id="export-data" class="btn btn-primary">Download data.json</button>
+                        
+                        <div class="export-options">
+                            <h4>Export Options</h4>
+                            <label>
+                                <input type="checkbox" id="export-apks" checked> APKs
+                            </label>
+                            <label>
+                                <input type="checkbox" id="export-courses" checked> Courses
+                            </label>
+                            <label>
+                                <input type="checkbox" id="export-settings" checked> Settings
+                            </label>
+                            <label>
+                                <input type="checkbox" id="export-navigation" checked> Navigation
+                            </label>
+                        </div>
+                    </div>
+                    
+                    <div class="import-panel">
+                        <h3>Import Data</h3>
+                        <p>Upload a data.json file to replace current content.</p>
+                        
+                        <div class="file-upload">
+                            <input type="file" id="import-file" accept=".json" style="display: none;">
+                            <button onclick="document.getElementById('import-file').click()" class="btn btn-secondary">
+                                Choose File
+                            </button>
+                            <span id="file-name" class="file-name">No file chosen</span>
+                        </div>
+                        
+                        <button id="import-data" class="btn btn-primary" disabled>Import Data</button>
+                        
+                        <div class="import-warning">
+                            <p><strong>⚠️ Warning:</strong> Importing will replace all current data. Make sure to export your current data first!</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="data-preview">
+                    <h3>Current Data Structure</h3>
+                    <pre id="data-preview" class="json-preview"></pre>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <!-- Notification -->
+    <div id="notification" class="notification"></div>
+
+    <script src="admin.js"></script>
+</body>
+</html>

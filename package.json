@@ -1,0 +1,17 @@
+{
+  "name": "modmaster-website",
+  "version": "1.0.0",
+  "description": "MODMASTER - Premium APK & Course Platform",
+  "main": "index.html",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "keywords": ["modmaster", "apk", "courses", "cyberpunk", "futuristic"],
+  "author": "Ishant Webworks",
+  "license": "MIT",
+  "devDependencies": {
+    "vite": "^5.4.2"
+  }
+}

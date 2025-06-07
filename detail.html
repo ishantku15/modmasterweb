@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title id="page-title">Loading... - MODMASTER</title>
+    
+    <!-- SEO Meta Tags -->
+    <meta name="description" id="page-description" content="MODMASTER - Premium APK & Course Platform">
+    <meta name="keywords" id="page-keywords" content="mod apk, premium apps, courses, android">
+    <meta name="author" content="Ishant Webworks">
+    <meta name="robots" content="index, follow">
+    
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" id="og-title" content="MODMASTER">
+    <meta property="og:description" id="og-description" content="Premium APK & Course Platform">
+    <meta property="og:type" content="article">
+    <meta property="og:url" id="og-url" content="">
+    <meta property="og:image" id="og-image" content="">
+    
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" id="twitter-title" content="MODMASTER">
+    <meta name="twitter:description" id="twitter-description" content="Premium APK & Course Platform">
+    <meta name="twitter:image" id="twitter-image" content="">
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" id="canonical-url" href="">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🚀</text></svg>">
+    
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="assets/css/style.css">
+    
+    <!-- Detail Page Specific Styles -->
+    <style>
+        .detail-hero {
+            padding: 120px 0 80px;
+            background: linear-gradient(135deg, var(--gray-50) 0%, var(--white) 100%);
+        }
+        
+        .detail-container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 0 var(--space-4);
+        }
+        
+        .detail-content {
+            display: grid;
+            grid-template-columns: 300px 1fr;
+            gap: var(--space-12);
+            align-items: start;
+        }
+        
+        .detail-image {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+            border-radius: var(--radius-2xl);
+            box-shadow: var(--shadow-xl);
+            border: 1px solid var(--gray-200);
+        }
+        
+        .detail-info h1 {
+            font-size: var(--text-4xl);
+            font-weight: 800;
+            margin-bottom: var(--space-4);
+            color: var(--gray-900);
+        }
+        
+        .detail-meta {
+            display: flex;
+            flex-wrap: wrap;
+            gap: var(--space-4);
+            margin-bottom: var(--space-6);
+        }
+        
+        .meta-item {
+            background: var(--gray-100);
+            padding: var(--space-2) var(--space-4);
+            border-radius: var(--radius-full);
+            font-size: var(--text-sm);
+            font-weight: 500;
+            color: var(--gray-700);
+        }
+        
+        .detail-description {
+            font-size: var(--text-lg);
+            line-height: 1.7;
+            color: var(--gray-600);
+            margin-bottom: var(--space-8);
+        }
+        
+        .detail-actions {
+            display: flex;
+            gap: var(--space-4);
+            margin-bottom: var(--space-8);
+        }
+        
+        .detail-specs {
+            background: var(--bg-card);
+            padding: var(--space-6);
+            border-radius: var(--radius-2xl);
+            box-shadow: var(--shadow-md);
+            border: 1px solid var(--gray-200);
+            margin-bottom: var(--space-8);
+        }
+        
+        .detail-specs h3 {
+            font-size: var(--text-xl);
+            font-weight: 700;
+            margin-bottom: var(--space-4);
+            color: var(--gray-900);
+        }
+        
+        .specs-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: var(--space-4);
+        }
+        
+        .spec-item {
+            display: flex;
+            justify-content: space-between;
+            padding: var(--space-3) 0;
+            border-bottom: 1px solid var(--gray-200);
+        }
+        
+        .spec-item:last-child {
+            border-bottom: none;
+        }
+        
+        .spec-label {
+            font-weight: 600;
+            color: var(--gray-800);
+        }
+        
+        .spec-value {
+            color: var(--gray-600);
+        }
+        
+        .related-section {
+            margin-top: var(--space-16);
+        }
+        
+        .related-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: var(--space-6);
+        }
+        
+        .breadcrumb {
+            background: var(--white);
+            padding: var(--space-4) 0;
+            border-bottom: 1px solid var(--gray-200);
+            margin-top: 80px;
+        }
+        
+        .breadcrumb-list {
+            display: flex;
+            align-items: center;
+            gap: var(--space-2);
+            list-style: none;
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 0 var(--space-4);
+        }
+        
+        .breadcrumb-item {
+            color: var(--gray-600);
+            font-size: var(--text-sm);
+        }
+        
+        .breadcrumb-item a {
+            color: var(--primary-color);
+            text-decoration: none;
+            transition: color var(--transition-fast);
+        }
+        
+        .breadcrumb-item a:hover {
+            color: var(--secondary-color);
+        }
+        
+        .breadcrumb-separator {
+            color: var(--gray-400);
+        }
+        
+        .rating-stars {
+            display: flex;
+            align-items: center;
+            gap: var(--space-1);
+            margin-bottom: var(--space-4);
+        }
+        
+        .star {
+            color: #fbbf24;
+            font-size: var(--text-lg);
+        }
+        
+        .rating-text {
+            margin-left: var(--space-2);
+            color: var(--gray-600);
+            font-weight: 500;
+        }
+        
+        .error-page {
+            min-height: 60vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: var(--space-8);
+        }
+        
+        .error-content h1 {
+            font-size: var(--text-4xl);
+            font-weight: 800;
+            margin-bottom: var(--space-4);
+            color: var(--gray-900);
+        }
+        
+        .error-content p {
+            font-size: var(--text-lg);
+            color: var(--gray-600);
+            margin-bottom: var(--space-8);
+        }
+        
+        @media (max-width: 768px) {
+            .detail-content {
+                grid-template-columns: 1fr;
+                gap: var(--space-8);
+            }
+            
+            .detail-image {
+                height: 250px;
+            }
+            
+            .detail-info h1 {
+                font-size: var(--text-3xl);
+            }
+            
+            .detail-actions {
+                flex-direction: column;
+            }
+            
+            .detail-actions .btn {
+                width: 100%;
+            }
+            
+            .specs-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <a href="index.html" style="text-decoration: none; color: inherit;">
+                    <span class="logo-text">MOD</span><span class="logo-accent">MASTER</span>
+                </a>
+            </div>
+            <div class="nav-menu" id="nav-menu">
+                <ul class="nav-list">
+                    <li><a href="index.html#home" class="nav-link">Home</a></li>
+                    <li><a href="index.html#apks" class="nav-link">APKs</a></li>
+                    <li><a href="index.html#courses" class="nav-link">Courses</a></li>
+                    <li><a href="index.html#request" class="nav-link">Request</a></li>
+                    <li><a href="index.html#about" class="nav-link">About</a></li>
+                </ul>
+            </div>
+            <button class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Breadcrumb -->
+    <nav class="breadcrumb">
+        <ul class="breadcrumb-list" id="breadcrumb">
+            <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+            <li class="breadcrumb-separator">›</li>
+            <li class="breadcrumb-item" id="breadcrumb-category">Loading...</li>
+            <li class="breadcrumb-separator">›</li>
+            <li class="breadcrumb-item" id="breadcrumb-title">Loading...</li>
+        </ul>
+    </nav>
+
+    <!-- Detail Content -->
+    <main id="detail-main">
+        <!-- Content will be loaded dynamically -->
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>MODMASTER</h3>
+                    <p>Your ultimate destination for premium mod APKs and exclusive courses.</p>
+                    <div class="social-links">
+                        <a href="https://ishant.shop" class="social-link" target="_blank" rel="noopener">Website</a>
+                        <a href="https://blogs.ishant.shop" class="social-link" target="_blank" rel="noopener">Blog</a>
+                    </div>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="index.html#home">Home</a></li>
+                        <li><a href="index.html#apks">APKs</a></li>
+                        <li><a href="index.html#courses">Courses</a></li>
+                        <li><a href="index.html#request">Request</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Contact</h4>
+                    <p>Email: <a href="mailto:ishant150407@gmail.com">ishant150407@gmail.com</a></p>
+                    <p>Website: <a href="https://ishant.shop" target="_blank" rel="noopener">ishant.shop</a></p>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2025 MODMASTER. Created by <a href="https://ishant.shop" target="_blank" rel="noopener">Ishant Webworks</a>. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button id="back-to-top" class="back-to-top" aria-label="Back to top">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="m18 15-6-6-6 6"/>
+        </svg>
+    </button>
+
+    <!-- Scripts -->
+    <script src="assets/js/detail.js"></script>
+</body>
+</html>
